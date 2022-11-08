@@ -6,7 +6,7 @@ require('./models/db');
 const User = require('./models/users')
 const userRouter = require('./routes/user')
 
-const PORT = process.env.PORT || 5000
+const PORT = process.env.PORT || 3001
 const app = express()
 app.use(express.json())
 app.use(userRouter)
@@ -21,5 +21,5 @@ app.listen(PORT, () => {
 
 
 app.get("/", (req, res) => {
-    res.send({ message: 'success', status_code: '1' })
+    res.status(200).send({ message: 'success', status_code: '1' })
 })
